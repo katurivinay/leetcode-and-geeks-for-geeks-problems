@@ -16,11 +16,10 @@ public:
         if(root == NULL)return ans;
         queue<TreeNode*> q;
         q.push(root);
-        int n = 1;
         
         while(!q.empty())
         {
-            int count = 0; 
+            int count = 0, n = q.size(); 
             vector<int> temp;
             for(int i = 0 ; i < n ; i++){
                 TreeNode* current = q.front();
