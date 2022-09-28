@@ -38,7 +38,7 @@ public:
             }
             else{
                 reverse(temp.begin(),temp.end());
-                for(int i = 0 ; i < temp.size() ; i++)cout<<temp[i]<<" ";
+                //for(int i = 0 ; i < temp.size() ; i++)cout<<temp[i]<<" ";
                 ans.push_back(temp);
                 g = true;
             }
