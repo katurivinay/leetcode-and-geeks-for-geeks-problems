@@ -20,7 +20,7 @@ void helper(vector<int> &ans,TreeNode* root,int level){
     int findBottomLeftValue(TreeNode* root) {
         vector<int> ans;
         helper(ans,root,0);
-        for(auto i : ans)cout<<i<<" ";
+        //for(auto i : ans)cout<<i<<" ";
         return ans[ans.size()-1];
     }
 };
