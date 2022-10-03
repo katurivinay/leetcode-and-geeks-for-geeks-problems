@@ -3,9 +3,9 @@ public:
     int minimizeXor(int num1, int n) {
          int count = __builtin_popcount(n) ;
         int countnum1 = __builtin_popcount(num1);
-        if(count == countnum1){
-            return num1;
-        }
+        // if(count == countnum1){
+        //     return num1;
+        // }
         int bit1[32] = {0},bit2[32] = {0},number1 = num1; 
         for(int i = 0 ; i < 32 ; i++){
            if(number1&(1 << i)){
