@@ -9,7 +9,6 @@ public:
 		}
 		vector<string>ans;
 		for(int i=0;i<26;i++){
-            //cout<<string(1,i+'a')<<" ";
             cout<<util[i]<<" ";
 			while(util[i]--) ans.push_back(string(1,i+'a'));
 		}
