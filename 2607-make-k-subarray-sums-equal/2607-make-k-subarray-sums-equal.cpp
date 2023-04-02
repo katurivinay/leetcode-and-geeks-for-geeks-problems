@@ -1,17 +1,25 @@
+#include <bits/stdc++.h>
+using ll = long long;
 class Solution {
 public:
     long long makeSubKSumEqual(vector<int>& arr, int k) {
-         long long sz = arr.size(), res = 0;
-    for (int i = 0; i < k; ++i) {
-        vector<int> cycle;
-        for (int j = i; arr[j] != 0; j = (j + k) % sz) {
-            cycle.push_back(arr[j]);
-            arr[j] = 0;
+        ll n = arr.size();
+        k = gcd(n,k);
+        ll ans = 0;
+        for(ll i = 0; i < k; i++)
+        {
+            //cout<<i<<"\n";
+            vector <ll> vec;
+            for(ll j = i; j < n; j+=k)
+                vec.push_back(arr[j]);
+            sort(vec.begin(),vec.end());
+            ll mid = vec.size()/2;
+            for(ll ind = 0; ind < vec.size(); ind++){
+                ans+=abs(vec[mid]-vec[ind]);
+                //cout<<vec[ind]<<" ";
+            }
+            cout<<"\n";
         }
-        nth_element(begin(cycle), begin(cycle) + cycle.size() / 2, end(cycle));
-        for (int n : cycle)
-            res += abs(n - cycle[cycle.size() / 2]);
-    }
-    return res;
+        return ans;
     }
 };
