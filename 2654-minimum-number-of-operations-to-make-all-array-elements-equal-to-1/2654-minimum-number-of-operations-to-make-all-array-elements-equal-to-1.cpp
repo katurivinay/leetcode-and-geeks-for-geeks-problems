@@ -14,11 +14,12 @@ public:
             if (on_count >= 1)return (nums.size()-on_count);
             int res = 1e9;
             for(int i = 0 ;i < nums.size();i++){
-                int g = nums[i];
+                int g = 0;
                 for(int j = i ; j < nums.size() ; j++){
                     g = __gcd(g,nums[j]);
                     if(g == 1){
                         res = min(res, (j - i) + (n - 1));
+                        break;
                     }
                 }
             }
