@@ -2,20 +2,18 @@ class Solution {
 public:
     int maxDepth(string s) {
         //stack<char> para;
-        int max = 0, cur = 0;
+        int maxi = 0, cur = 0;
         for(char ch : s){
             if(ch == '('){
                 //para.push(ch);
                 cur++;
-            }
-            if(max < cur){
-                max = cur;
-            }
+                maxi = max(maxi , cur);
+                }
             if(ch == ')'){
                 //para.pop();
                 cur--;
             }
         }
-        return max;
+        return maxi;
     }
 };
